@@ -1,7 +1,8 @@
 import * as fs from 'fs';
 import {throughdirectory, filelist} from './getFiles';
 const anchorIDs = new Set<string>();
-const getIDs = (data: string) => {
+let indexIDpathList: string[] = [];
+const getIDs = (absPath: string, data: string) => {
   const block = data.split(/\r\n|\r|\n/);
   block.forEach((line: string, index: number) => {
     let lv = line.trim();
@@ -16,6 +17,7 @@ const getIDs = (data: string) => {
           for (; i < len; i++) {
             if (lv[i] === ' ') {
               author = lv.substring(0, i);
+              indexIDpathList.push(absPath);
               break;
             }
           }
@@ -34,7 +36,7 @@ const getIDlist = (dir: string = './') => {
   throughdirectory(dir);
   filelist.forEach((path) => {
     const data = fs.readFileSync(path, { encoding: 'utf8', flag: 'r' });
-    getIDs(data);
+    getIDs(dir, data);
   });
   idlist = Array.from(anchorIDs);
   console.log(idlist);
@@ -45,4 +47,4 @@ const getIDlist = (dir: string = './') => {
 
 // console.log(getIDlist(wk));
 
-export {getIDlist};
+export {indexIDpathList, getIDlist};

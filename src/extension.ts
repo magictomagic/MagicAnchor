@@ -2,7 +2,7 @@
 // Import the module and reference it with the alias vscode in your code below
 // import { link } from 'node:fs';
 import * as vscode from 'vscode';
-import {getIDlist} from './getAnchorID';
+import {indexIDpathList, getIDlist} from './getAnchorID';
 
 // console.log();
 
@@ -25,52 +25,39 @@ export function activate(context: vscode.ExtensionContext) {
 		if(vscode.workspace.workspaceFolders !== undefined) {
 			wf = vscode.workspace.workspaceFolders[0].uri.path! ;
 			// let f = vscode.workspace.workspaceFolders[0].uri.fsPath ; 
-			// message = `YOUR-EXTENSION: folder: ${wf} - ${f}` ;
-			// vscode.window.showInformationMessage(message);
 		} else {
 			vscode.window.showInformationMessage("YOUR-EXTENSION: Working folder not found, open a folder an try again");
 		}
-		// console.log(wf);
-		// vscode.window.showInformationMessage(wf);
-		// console.log("111111111111111111111");
-		// vscode.window.showInformationMessage('1111111');
 		wf = wf.substr(1).split('/').join('\\');
-		// console.log("aaaaaaaaaaaaaaa");
 		console.log(wf);
-		// vscode.window.showInformationMessage("bbbbbbbbbbbbbb");
-		// console.log("bbbbbbbbbbbbb");
-		// vscode.window.showInformationMessage(wf);
-		// console.log((getIDlist(wf)));
-
 		let picklist = getIDlist(wf);
-
-		const result = await vscode.window.showQuickPick(picklist, {
+		const anchorID = await vscode.window.showQuickPick(picklist, {
 			placeHolder: picklist[0] || 'you have not created any valide anchor on current workspace or you current file is not opened as a working directory',
-			// onDidSelectItem: item => vscode.window.showInformationMessage(`you chosed anchor ID: ${item}`)
 		});
-		vscode.window.showInformationMessage(`you chosed anchor ID: ${result}`);
-		// const result = await vscode.window.showInputBox({
-		// 	value: 'input your anchor id',
-		// 	placeHolder: 'input your anchor id',
-		// 	validateInput: text => {
-		// 		// vscode.window.showInformationMessage(`Validating: ${text}`);
-		// 		return text === '123' ? 'Not 123!' : null;
-		// 	}
-		// });
-
+		// vscode.window.showInformationMessage(`you chosed anchor ID: ${result}`);
+		console.log(indexIDpathList);
+		// vscode.window.showInformationMessage(indexIDpathList.toString());
 		// vscode.window.showInformationMessage(`Got: ${result}`);
-		// const params = await vscode.window.showInputBox({
-		// 	value: "input your pamams",
-		// 	placeHolder: 'use space to split',
-		// 	// validateInput: text => {
-		// 	// 	return text.length > 0;
-		// 	// }
-		// });
+		const params = await vscode.window.showInputBox({
+			value: "input your pamams",
+			placeHolder: 'use space to split',
+			// validateInput: text => {
+			// 	return text.length > 0;
+			// }
+		}) || "###";
 		// vscode.window.showInformationMessage(`${params}`);
 		// console.log(result);
-		// console.log(params?.split(' '));
+		let paramsList = params.split(' ');
+		vscode.window.showInformationMessage(anchorID + '\n' + indexIDpathList.toString() + '\n' + paramsList.toString());
+		// console.log(anchorID);
+		// console.log(indexIDpathList.toString());
+		// console.log(paramsList.toString());
+
+		// anchorID: string, indexIDpathList: string[], paramsList: string[] 
 		
 	});
+	
+
 	context.subscriptions.push(disposable);
 }
 
