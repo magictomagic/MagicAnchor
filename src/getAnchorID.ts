@@ -39,12 +39,14 @@ const getIDlist = (dir: string = './') => {
     getIDs(dir, data);
   });
   idlist = Array.from(anchorIDs);
-  console.log(idlist);
+  // console.log(idlist);
   return idlist;
 };
-// let wk = '/c:/Users/magic/Desktop/asd';
-// wk = wk.substr(1).split('/').join('\\');
+let wk = '/c:/Users/magic/Desktop/asd';
+wk = wk.substr(1).split('/').join('\\');
 
-// console.log(getIDlist(wk));
 
-export {indexIDpathList, getIDlist};
+console.log(getIDlist(wk));
+
+console.log(filelist); // 这里不对
+export {filelist, getIDlist};

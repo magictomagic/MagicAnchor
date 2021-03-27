@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import {indexIDpathList, getIDlist} from './getAnchorID';
+import {filelist, getIDlist} from './getAnchorID';
 import {reWriteFiles} from './lineGenerator';
 
 export function activate(context: vscode.ExtensionContext) {
@@ -22,13 +22,16 @@ export function activate(context: vscode.ExtensionContext) {
 			value: "input your pamams",
 			placeHolder: 'use space to split',
 		}) || "###";
+		// if (params === '###'){
+		// 	vscode.window.showInformationMessage('')
+		// }
 		let paramsList = params.split(' ');
-		vscode.window.showInformationMessage(anchorID + '\n' + indexIDpathList.toString() + '\n' + paramsList.toString());
-		// console.log(anchorID);
-		// console.log(indexIDpathList.toString());
-		// console.log(paramsList.toString());
+		vscode.window.showInformationMessage(anchorID + '\n' + filelist.toString() + '\n' + paramsList.toString());
+		console.log(anchorID);
+		console.log(filelist.toString()); // 这里不对
+		console.log(paramsList.toString());
 		// reWriteFiles()
-		indexIDpathList.forEach((fileLocation) => {
+		filelist.forEach((fileLocation) => {
 			return reWriteFiles(fileLocation, paramsList, anchorID || "root");
 		});
 
