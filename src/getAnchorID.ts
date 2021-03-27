@@ -1,11 +1,9 @@
 import * as fs from 'fs';
-import * as path from 'path';
-import {fileSearch} from './getFiles';
-const authorIDs = new Set();
-const replacedBoilerplate = (fileLocation: string, data: string) => {
+import {throughdirectory, filelist} from './getFiles';
+const anchorIDs = new Set<string>();
+const getIDs = (data: string) => {
   const block = data.split(/\r\n|\r|\n/);
-  const additionkey: [] = []; const additionValue: [] = [];
-  const lines = block.forEach((line: string, index: number) => {
+  block.forEach((line: string, index: number) => {
     let lv = line.trim();
     if (lv && lv[0] && lv[1] && lv[0] === '/' && lv[1] === '/') {
       lv = lv.substr(2).trim();
@@ -21,30 +19,30 @@ const replacedBoilerplate = (fileLocation: string, data: string) => {
               break;
             }
           }
-          authorIDs.add(author);
+          anchorIDs.add(author);
         } else {
           console.log('syntax not supported');
         }
       }
     }
   });
-  return { lines, additionkey, additionValue };
 };
-const filesList = fileSearch('./');
-filesList.array.forEach(element => {
-  
-});
-// const getIDs = () => {
-//   filesList.forEach(
-//     file => {
-//       const absPath = path.join(__dirname, file);
-//       console.log(absPath);
-//       // const data = fs.readFileSync(absPath, { encoding: 'utf8', flag: 'r' });
-//       // replacedBoilerplate(absPath, data);
-//     }
-//   );
-//   return Array.from(authorIDs);
-// };
-// const getIDs = () => "dasdasd";
-// console.log(getIDs());
-// export { getIDs };
+
+let idlist: string[];
+
+const getIDlist = (dir: string = './') => {
+  throughdirectory(dir);
+  filelist.forEach((path) => {
+    const data = fs.readFileSync(path, { encoding: 'utf8', flag: 'r' });
+    getIDs(data);
+  });
+  idlist = Array.from(anchorIDs);
+  console.log(idlist);
+  return idlist;
+};
+// let wk = '/c:/Users/magic/Desktop/asd';
+// wk = wk.substr(1).split('/').join('\\');
+
+// console.log(getIDlist(wk));
+
+export {getIDlist};
