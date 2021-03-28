@@ -57,8 +57,11 @@ Initial release of MagicAnchor
 
 
 ### 0.0.2 TODO
-- [ ] Rename the stupid register name `Hello Word`.
+- [x] Rename the stupid register name `Hello Word`.
+- [ ] fixed: auto replace when run first time. 
 - [ ] Enable ignore files and directory from vscode settings, defaultly ignore directory such as `node_modules`
+- [ ] Enable delete, change.
+- [ ] Enable select Current File or Whole Working directory
 
 ### 0.0.3 TODO 
 - [ ] Text indentation according to spaces in front of `//`
@@ -71,3 +74,7 @@ Initial release of MagicAnchor
 - [ ] Monitor changed files and index them
 ### Not Sure
 - [ ] Customize directory depth
+
+### problem
+- [ ] different params vectors result in too many ids
+- [ ] Not very easy to use

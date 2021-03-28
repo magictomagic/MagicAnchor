@@ -11,18 +11,18 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:MagicAnchor.helloWorld",
-		"onCommand:extension.sayHello"
+        "onCommand:MagicAnchor.workingDirectory",
+		"onCommand:extension.currentFile"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "MagicAnchor.helloWorld",
-				"title": "Hello World"
+				"command": "MagicAnchor.workingDirectory",
+				"title": "Anchor: Working Directory"
 			},{
-				"command": "extension.sayHello",
-				"title": "Hello HHY"
+				"command": "extension.currentFile",
+				"title": "Anchor: Current File"
 			}
 		]
 	},

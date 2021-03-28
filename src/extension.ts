@@ -3,7 +3,7 @@ import {filelist, getIDlist} from './getAnchorID';
 import {reWriteFiles} from './lineGenerator';
 
 export function activate(context: vscode.ExtensionContext) {
-	let disposable = vscode.commands.registerCommand('MagicAnchor.helloWorld', async () => {
+	let disposable = vscode.commands.registerCommand('MagicAnchor.workingDirectory', async () => {
 		let wf = '';
 		// If you need the File use uri.fsPath If you need the Workspace Folder use uri.path
 		if(vscode.workspace.workspaceFolders !== undefined) {
@@ -38,9 +38,12 @@ export function activate(context: vscode.ExtensionContext) {
 		// anchorID: string, indexIDpathList: string[], paramsList: string[] 
 		
 	});
-	
+	let disposable1 = vscode.commands.registerCommand('MagicAnchor.currentFile', async () =>{
+		vscode.window.showInformationMessage('小爷我还没开发呢！');
+	});
 
 	context.subscriptions.push(disposable);
+	context.subscriptions.push(disposable1);
 }
 
 // this method is called when your extension is deactivated
