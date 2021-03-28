@@ -3,6 +3,7 @@
 	"displayName": "MagicAnchor",
 	"description": "Generate code according to boilerplate ",
 	"version": "0.0.1",
+	"publisher": "magictomagic",
 	"engines": {
 		"vscode": "^1.46.0"
 	},
