@@ -1,21 +1,40 @@
-# MagicAnchor README
+# MagicAnchor
+>I need to learn about some Architect things or use better AI to process it.
 
-Fuck You
+![](./resourse/magicAnchor.png)
 
-## Features
+## Notes
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Currently only support for Windows.
 
-For example if there is an image subfolder under your extension project workspace:
+Please open files by `Open Folder` in vscode.
+## Situation
 
+In some cases, you need to add similar text repeatedly. 
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+For example, you have to type codes to import, export, add configuration and other miscs in several but same files. What you do is just copy, past, and change a little params.
+
+If you keep doing these affairs, chances are you won't MAGA. **Do not repeat yourself!** MagicAnchor can help you get free you from that uncreative status.
+## Usage
+
+ ![](./resourse/demo.gif)
+## Grammar
+
+```text
+... // your code
+
+// notes: 
+// anchor: anchorID your code boilerplate, use {1} {2} to customize your params
+
+... // your code
+```
+
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Windows
 
-## Extension Settings
+<!-- ## Extension Settings
 
 Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
 
@@ -28,35 +47,27 @@ This extension contributes the following settings:
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+Calling out known issues can help limit users opening duplicate issues against your extension. -->
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
+### 0.0.1
 
 Initial release of MagicAnchor
 
 
------------------------------------------------------------------------------------------------------------
-## Following extension guidelines
+### 0.0.2 TODO
+- [ ] Rename the stupid register name `Hello Word`.
+- [ ] Enable ignore files and directory from vscode settings, defaultly ignore directory such as `node_modules`
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+### 0.0.3 TODO 
+- [ ] Text indentation according to spaces in front of `//`
+- [ ] Enable it on Linux  
+- [ ] Alert modified files
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+### 0.0.4 TODO 
+- [ ] Support annotation according to files type
+- [ ] Index anchor ids on vscode start deamonly
+- [ ] Monitor changed files and index them
+### Not Sure
+- [ ] Customize directory depth
