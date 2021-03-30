@@ -12,7 +12,7 @@
 	],
 	"activationEvents": [
         "onCommand:MagicAnchor.workingDirectory",
-		"onCommand:extension.currentFile"
+		"onCommand:MagicAnchor.currentFile"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
@@ -21,11 +21,15 @@
 				"command": "MagicAnchor.workingDirectory",
 				"title": "Anchor: Working Directory"
 			},{
-				"command": "extension.currentFile",
+				"command": "MagicAnchor.currentFile",
 				"title": "Anchor: Current File"
 			}
 		]
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/magictomagic/MagicAnchor.git"
+	  },
 	"scripts": {
 		"vscode:prepublish": "yarn run package",
 		"compile": "webpack",

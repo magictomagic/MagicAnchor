@@ -1,3 +1,2 @@
-;
-    // console.log(additionkey);
-    // console.log(additionV
+
+console.log(filelist);

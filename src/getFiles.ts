@@ -6,7 +6,9 @@ let filelist: string[]  = [];
 // wk = wk.substr(1).split('/').join('\\');
 const throughdirectory = (directory:string) => {
     fs.readdirSync(directory).forEach(fileName => {
-        if([...ignore.directory, ...ignore.files].includes(directory.split('\\')[0])) {return;};
+        let tmpArray = directory.split('\\');
+        if([...ignore.directory, ...ignore.files].includes(tmpArray[tmpArray.length - 1])) {return;};
+        // console.log(directory.split('\\'));
         const absolute = path.join(directory, fileName);
         if (fs.statSync(absolute).isDirectory()) {return throughdirectory(absolute);}
         else {return filelist.push(absolute);}

@@ -58,7 +58,7 @@ Initial release of MagicAnchor
 
 ### 0.0.2 TODO
 - [x] Rename the stupid register name `Hello Word`.
-- [ ] fixed: auto replace when run first time. 
+- [x] fixed: auto replace when run first time. 
 - [ ] Enable ignore files and directory from vscode settings, defaultly ignore directory such as `node_modules`
 - [ ] Enable delete, change.
 - [ ] Enable select Current File or Whole Working directory

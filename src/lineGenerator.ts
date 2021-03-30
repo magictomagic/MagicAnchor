@@ -2,12 +2,12 @@ import * as fs from 'fs';
 // import { readFileSync } from 'node:fs';
 import * as path from 'path';
 
-const bb  = {
-    fileLocation: 'C:\\Users\\magic\\Desktop\\asd\\t1.ts',
-    // data: "sdfasdfads \n // anchor: magic sdfads第四{65}fa{asda{{第一{10}}}}fsa第一{10}f第二{11}a第三{36}sdf第二{11}ada}}} asdfasdf \n asdfasdfas \n //anchor: magictomagic 打倒ccp",
-    paramsList: ['111111111', '2222222', '3333333', '44444444'],
-    authorID: 'magic'
-};
+// const bb  = {
+//     fileLocation: 'C:\\Users\\magic\\Desktop\\asd\\t1.ts',
+//     // data: "sdfasdfads \n // anchor: magic sdfads第四{65}fa{asda{{第一{10}}}}fsa第一{10}f第二{11}a第三{36}sdf第二{11}ada}}} asdfasdf \n asdfasdfas \n //anchor: magictomagic 打倒ccp",
+//     paramsList: ['111111111', '2222222', '3333333', '44444444'],
+//     authorID: 'magic'
+// };
 
 const replacedBoilerplate = (fileLocation: string, data: string, paramsList: string[], authorID: string) => {
     const block = data.split(/\r\n|\r|\n/);
@@ -116,5 +116,5 @@ const reWriteFiles = (fileLocation: string, paramsList: string[], authorID: stri
     // console.log(output);
   };
 
-reWriteFiles(bb.fileLocation, bb.paramsList, bb.authorID);
+// reWriteFiles(bb.fileLocation, bb.paramsList, bb.authorID);
 export {reWriteFiles};
