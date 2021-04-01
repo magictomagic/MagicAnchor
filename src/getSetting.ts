@@ -10,17 +10,22 @@ const cD: string[] = workspace.getConfiguration().get('magic-anchor.configure.cu
 // console.log(cF);
 
 
-let fds: string[] = [];
+let iFs: string[] = [];
+let iDs: string[] = [];
 
-difF && fds.push(...ignore.files);
-difD && fds.push(...ignore.directory);
-console.log(fds);
+difF && iFs.push(...ignore.files);
+difD && iDs.push(...ignore.directory);
+// console.log("add ignore iFs: " + iFs.toString());
+// console.log("add ignore iDs: " + iDs.toString());
 // Array.from(cF);
-fds.push(...cF);
-fds.push(...cD);
+iFs.push(...cF);
+iDs.push(...cD);
 // console.log(cF);
 // console.log(typeof cF);
-console.log(fds);
+// console.log("total iFs: " + iFs.toString());
+// console.log("total iDs: " + iDs.toString());
+
 export {
-    fds
+    iFs,
+    iDs
 };
