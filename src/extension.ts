@@ -39,12 +39,19 @@ export function activate(context: vscode.ExtensionContext) {
 		// anchorID: string, indexIDpathList: string[], paramsList: string[] 
 		
 	});
-	let disposable1 = () =>{
-		vscode.window.showInformationMessage('小爷我还没开发呢！');
+	let disposable1 = async () =>{
+		// vscode.window.showInformationMessage('小爷我还没开发呢！');
+		// const workbenchConfig = vscode.workspace.getConfiguration('workbench');
+		// const a = vscode.workspace.onDidChangeConfiguration;
+		const configuredView = vscode.workspace.getConfiguration().get('conf.view.showOnWindowOpen');
+		console.log(configuredView);
+		vscode.window.showInformationMessage(typeof configuredView);
 	};
 
 	context.subscriptions.push(disposable);
 	context.subscriptions.push(vscode.commands.registerCommand('MagicAnchor.currentFile', disposable1));
+	// Example: Reading Window scoped configuration
+	
 }
 
 

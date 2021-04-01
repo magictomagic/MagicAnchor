@@ -60,18 +60,23 @@ Initial release of MagicAnchor
 - [x] Rename the stupid register name `Hello Word`.
 - [x] fixed: auto replace when run first time. 
 - [ ] Enable ignore files and directory from vscode settings, defaultly ignore directory such as `node_modules`
+
+### 0.0.3 TODO
 - [ ] Enable delete, change.
 - [ ] Enable select Current File or Whole Working directory
 
-### 0.0.3 TODO 
+### 0.0.4 TODO 
 - [ ] Text indentation according to spaces in front of `//`
 - [ ] Enable it on Linux  
 - [ ] Alert modified files
 
-### 0.0.4 TODO 
+### 0.0.5 TODO 
 - [ ] Support annotation according to files type
 - [ ] Index anchor ids on vscode start deamonly
 - [ ] Monitor changed files and index them
+
+### 0.0.6 TODO
+- [ ] generate boilerplate according to code, see https://github.com/Microsoft/vscode-extension-samples/tree/main/code-actions-sample
 ### Not Sure
 - [ ] Customize directory depth
 
