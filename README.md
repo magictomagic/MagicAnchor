@@ -69,12 +69,13 @@ Initial release of MagicAnchor
 ### 0.0.4 TODO 
 - [ ] Enable delete, change.
 - [ ] Enable select Current File or Whole Working directory
+- [ ] add licences and use git to release
 
 
 ### 0.0.5 TODO
 - [ ] Alert modified files
 - [ ] Text indentation according to spaces in front of `//`
-- [ ] Enable it on Linux  
+- [ ] Enable it on Linux and MacOS
 
 ### 0.0.6 TODO 
 - [ ] Support annotation according to files type
