@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 import {filelist, getIDlist} from './getAnchorID';
 import {reWriteFiles} from './lineGenerator';
+import * as testCus from './getSetting';
 // import {}
 
 export function activate(context: vscode.ExtensionContext) {
@@ -43,15 +44,17 @@ export function activate(context: vscode.ExtensionContext) {
 		// vscode.window.showInformationMessage('小爷我还没开发呢！');
 		// const workbenchConfig = vscode.workspace.getConfiguration('workbench');
 		// const a = vscode.workspace.onDidChangeConfiguration;
-		const configuredView = vscode.workspace.getConfiguration().get('conf.view.showOnWindowOpen');
-		console.log(configuredView);
-		vscode.window.showInformationMessage(typeof configuredView);
+		// const configuredView = vscode.workspace.getConfiguration().get('conf.enableDefaultIgnore');
+		// console.log(configuredView);
+		// vscode.window.showInformationMessage(typeof configuredView);
+		// console.log(testCus.cD);
+		// vscode.window.showInformationMessage(typeof testCus.cD);
+
 	};
 
 	context.subscriptions.push(disposable);
 	context.subscriptions.push(vscode.commands.registerCommand('MagicAnchor.currentFile', disposable1));
 	// Example: Reading Window scoped configuration
-	
 }
 
 

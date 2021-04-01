@@ -56,12 +56,14 @@ Calling out known issues can help limit users opening duplicate issues against y
 Initial release of MagicAnchor
 
 
-### 0.0.2 TODO
+### 0.0.2
 - [x] Rename the stupid register name `Hello Word`.
 - [x] fixed: auto replace when run first time. 
-- [ ] Enable ignore files and directory from vscode settings, defaultly ignore directory such as `node_modules`
+- [x] Enable ignore files and directory from vscode settings, defaultly ignore directory such as `node_modules`
 
 ### 0.0.3 TODO
+- [ ] fixed: must reload to update configuration
+- [ ] fixed: cannot take effect to ignore on files
 - [ ] Enable delete, change.
 - [ ] Enable select Current File or Whole Working directory
 

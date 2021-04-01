@@ -2,7 +2,7 @@
   "name": "MagicAnchor",
 	"displayName": "MagicAnchor",
 	"description": "Generate code according to boilerplate ",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "magictomagic",
 	"engines": {
 		"vscode": "^1.46.0"
@@ -20,29 +20,28 @@
 			{
 				"title": "Magic Anchor",
 				"properties": {
-					"conf.view.showOnWindowOpen": {
-						"type": "string",
-						"enum": [
-							"explorer",
-							"search",
-							"scm",
-							"debug",
-							"extensions"
-						],
-						"default": "explorer",
-						"description": "Window configuration: View to show always when a window opens",
-						"scope": "window"
-					},
-					"conf.resource.insertEmptyLastLine": {
-						"type": "object",
-						"default": {},
-						"description": "Resource configuration: Configure files using glob patterns to have an empty last line always",
+					"magic-anchor.configure.customizeDirectories": {
+						"type": "array",
+						"default": ["ccccc"],
+						"description": "Customize your ignore directories",
 						"scope": "resource"
 					},
-					"conf.enableDefaultIgnore": {
+					"magic-anchor.configure.customizeFiles": {
+						"type": "array",
+						"default": ["aaaaa.txt"],
+						"description": "Customize your ignore files",
+						"scope": "resource"
+					},
+					"magic-anchor.configure.defaultFilesIgnore": {
 						"type": "boolean",
 						"default": true,
-						"description": "Do not scan node_modules",
+						"description": "Ignore Files: tempCodeRunnerFile.ts, .eslintrc.json, .gitignore, .vscodeignore, .yarnrc",
+						"scope": "window"
+					},
+					"magic-anchor.configure.defaultDirectoriesIgnore": {
+						"type": "boolean",
+						"default": true,
+						"description": "Ignore Directories: node_modules, .git, .vscode",
 						"scope": "window"
 					}
 				}
