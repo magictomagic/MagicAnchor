@@ -5,7 +5,7 @@
 
 ## Notes
 
-Currently only support for Windows.
+Currently **only support for Windows**.
 
 Please open files by `Open Folder` in vscode.
 ## Situation
@@ -64,20 +64,24 @@ Initial release of MagicAnchor
 ### 0.0.3 TODO
 - [ ] fixed: must reload to update configuration
 - [ ] fixed: cannot take effect to ignore on files
+- [ ] refactor project
+
+### 0.0.4 TODO 
 - [ ] Enable delete, change.
 - [ ] Enable select Current File or Whole Working directory
 
-### 0.0.4 TODO 
+
+### 0.0.5 TODO
+- [ ] Alert modified files
 - [ ] Text indentation according to spaces in front of `//`
 - [ ] Enable it on Linux  
-- [ ] Alert modified files
 
-### 0.0.5 TODO 
+### 0.0.6 TODO 
 - [ ] Support annotation according to files type
 - [ ] Index anchor ids on vscode start deamonly
 - [ ] Monitor changed files and index them
 
-### 0.0.6 TODO
+### 0.0.7 TODO
 - [ ] generate boilerplate according to code, see https://github.com/Microsoft/vscode-extension-samples/tree/main/code-actions-sample
 ### Not Sure
 - [ ] Customize directory depth
