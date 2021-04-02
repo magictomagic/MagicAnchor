@@ -2,8 +2,8 @@ import {workspace, window} from 'vscode';
 import { ignore } from './anchorignore';
 const difF = workspace.getConfiguration().get('magic-anchor.configure.defaultFilesIgnore');
 const difD = workspace.getConfiguration().get('magic-anchor.configure.defaultDirectoriesIgnore');
-const cF: string[] = workspace.getConfiguration().get('magic-anchor.configure.customizeFiles')!;
-const cD: string[] = workspace.getConfiguration().get('magic-anchor.configure.customizeDirectories')!;
+const cF: string[] = workspace.getConfiguration().get('magic-anchor.configure.customizeFiles') || [];
+const cD: string[] = workspace.getConfiguration().get('magic-anchor.configure.customizeDirectories') || [];
 
 // console.log(difF);
 // console.log(difD);

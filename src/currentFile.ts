@@ -1,12 +1,22 @@
 import * as vscode from 'vscode';
-// import {filelist, getIDlist} from './getAnchorID';
-// import {reWriteFiles} from './lineGenerator';
+import {getIDlistSingleFile} from './getAnchorID';
+import {reWriteFiles} from './lineGenerator';
+import {parseParams} from './parseParams';
 let currentFile = vscode.commands.registerCommand('MagicAnchor.currentFile', async () =>{
-    const configuration = vscode.workspace.getConfiguration();
+    let wf = vscode.window.activeTextEditor?.document.fileName || "error";
+    let picklist = getIDlistSingleFile(wf);
+    const anchorID = await vscode.window.showQuickPick(picklist, {
+        placeHolder : picklist[0] || 'you have not created any valide anchor on current file'
+    });
+    // console.log(wf);
+    vscode.window.showInformationMessage(wf || "aaaaaa");
+    const params = await vscode.window.showInputBox({
+        value: "input your params",
+        placeHolder: "use space to split",
+    }) || "###";
 
-    // 3) Get the current value
-    const currentValue = configuration.get<string[]>('magic-anchor.configure.customizeDirectories');
-    vscode.window.showInformationMessage(currentValue!.toString());
+    let paramsList = parseParams(params);
+    reWriteFiles(wf, paramsList, anchorID || "");
 
 }); 
 

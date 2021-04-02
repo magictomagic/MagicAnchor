@@ -1,3 +1,4 @@
+import * as vscode from 'vscode';
 import * as fs from 'fs';
 import {throughdirectory, filelist} from './getFiles';
 const anchorIDs = new Set<string>();
@@ -42,11 +43,27 @@ const getIDlist = (dir: string = './') => {
   // console.log(idlist);
   return idlist;
 };
-let wk = '/c:/Users/magic/Desktop/asd';
-wk = wk.substr(1).split('/').join('\\');
+
+// const anchorID
+
+const getIDlistSingleFile = (path: string) => {
+  if (path === "error") {
+    vscode.window.showInformationMessage("Can not get: vscode.window.activeTextEditor?.document.fileName");
+    return [];
+  }
+  const data = fs.readFileSync(path, { encoding: 'utf8', flag: 'r' });
+  getIDs(path, data);
+  idlist = Array.from(anchorIDs);
+  // console.log(idlist);
+  return idlist;
+};
 
 
-console.log(getIDlist(wk));
+// let wk = '/c:/Users/magic/Desktop/asd';
+// wk = wk.substr(1).split('/').join('\\');
 
-console.log(filelist); // 这里不对
-export {filelist, getIDlist};
+
+// console.log(getIDlist(wk));
+
+// console.log(filelist); // 这里不对
+export {filelist, getIDlist, getIDlistSingleFile};

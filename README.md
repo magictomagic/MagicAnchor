@@ -61,29 +61,30 @@ Initial release of MagicAnchor
 - [x] fixed: auto replace when run first time. 
 - [x] Enable ignore files and directory from vscode settings, defaultly ignore directory such as `node_modules`
 
-### 0.0.3 TODO
-- [ ] Enable select Current File or Whole Working directory
+### 0.0.3 
+- [x] Enable select Current File or Whole Working directory
 - [x] fixed: cannot take effect to ignore on files
-- [ ] refactor project
+- [x] refactor project
 
 ### 0.0.4 TODO 
 - [ ] Enable delete, change.
-
+- [ ] Alert modified files
 - [ ] add licences and use git to release
 
-
 ### 0.0.5 TODO
-- [ ] Alert modified files
+- [ ] fixed: disable cached value after files shift or anchor id deleted
 - [ ] Text indentation according to spaces in front of `//`
 - [ ] Enable it on Linux and MacOS
 
 ### 0.0.6 TODO 
 - [ ] Support annotation according to files type
+
+### 0.0.7 TODO
 - [ ] Index anchor ids on vscode start deamonly
 - [ ] Monitor changed files and index them
 - [ ] fixed: must reload to update configuration
 
-### 0.0.7 TODO
+### 0.0.8 TODO
 - [ ] generate boilerplate according to code, see https://github.com/Microsoft/vscode-extension-samples/tree/main/code-actions-sample
 ### Not Sure
 - [ ] Customize directory depth
